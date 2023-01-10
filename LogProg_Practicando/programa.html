@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- la etiqueta canvas reserva un espacio del tamaño que le especifique,
+    para luego permitirme trabajar en ese espacio como si fuera una pizarra-->
+    <canvas width="800" height="600"> </canvas>
+    <script>
+      // guardo el objeto canvas en una variable para poder trabajar con ella
+      var pizarra = document.querySelector("canvas");
+      // creo una etiqueta pincel que recibe un objeto renderizado en dos dimensiones
+      var pincel = pizarra.getContext("2d");
+
+      // fillStyle es un atributo que permite cambiar el color del fillRect
+      pincel.fillStyle = "lightblue";
+      // fillRect es una función que permite crear un rectangulo
+      // 1er valor inicio en eje x (largo), 2er valor inicio del eje y (alto)
+      // 3er valor es la cantidad a llenar de largo y 4to valor cantidad a llenar de ancho;
+      pincel.fillRect(0, 0, 800, 200);
+
+      pincel.fillStyle = "lightblue";
+      pincel.fillRect(0, 400, 800, 200);
+
+      // strokeStyle es un atributo que permite cambiar el color de la línea
+      pincel.strokeStyle = "red";
+      // lineWidth es un atributo que permite cambiar el ancho de la linea
+      pincel.lineWidth = "80";
+      // beginPath() es una función que permite indicar que se comenzará un nuevo camino
+      pincel.beginPath();
+      // moveTo() es una funcion que permite indicar donde comenzara el camino
+      pincel.moveTo(0, 0);
+      // lineTo() es una funcion que permite trazar lineas
+      pincel.lineTo(800, 600);
+      // stroke() es una funcion que permite dibujar la linea
+      pincel.stroke();
+
+      pincel.fillStyle = "yellow";
+      pincel.beginPath();
+      // arc() es una funcion que permite crear un circulo. 1er valor inicio en eje x
+      // 2do valor inicio en eje y, 3er valor es radio, 4to valor grado de inicio, 5to valor grado de fin
+      pincel.arc(400, 300, 80, 0, 2 * 3.14);
+      pincel.fill();
+
+      pincel.fillStyle = "grey";
+      pincel.beginPath();
+      pincel.moveTo(100, 450);
+      pincel.lineTo(150, 550);
+      pincel.lineTo(50, 550);
+      pincel.fill();
+    </script>
+  </body>
+</html>

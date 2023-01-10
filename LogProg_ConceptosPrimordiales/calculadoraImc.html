@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Bienvenido a la calculadora de IMC</h1>
+
+    <script>
+      function saltarLinea() {
+        document.write("<br><br>");
+      }
+
+      function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+      }
+
+      function evaluarImc(imc) {
+        if (imc >= 30) {
+          imprimir(
+            "Usted tiene un imc de: " +
+              imc +
+              " el cual entra en la clasificación de obesidad"
+          );
+        } else if (imc >= 25) {
+          imprimir(
+            "Usted tiene un imc de: " +
+              imc +
+              " el cual entre en la clasificación de sobrepeso"
+          );
+        } else if (imc >= 18.5) {
+          imprimir(
+            "Usted tiene un imc de: " +
+              imc +
+              " el cual entre en la clasificación de normopeso"
+          );
+        } else {
+          imprimir(
+            "Usted tiene un imc de: " +
+              imc +
+              " el cual entre en la clasificación de bajopeso"
+          );
+        }
+      }
+
+      var nombre = prompt("Ingrese su nombre");
+      var peso = prompt(nombre + " ingrese su peso en kg");
+      var altura = prompt(
+        nombre + " ingrese su altura en mt separados por punto"
+      );
+
+      var imc = Math.round(peso / (altura * altura));
+
+      evaluarImc(imc);
+    </script>
+  </body>
+</html>

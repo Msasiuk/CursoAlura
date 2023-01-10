@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--¿Cuántos años de diferencia tienes con tu hermano? Escribe un programa que muestre el mensaje 
+        ¨Nuestra diferencia de edad es¨, concatenando el resultado de la diferencia de tu edad con la de tu hermano (o de un amigo).
+        La respuesta puede dar negativa, sin duda. No olvides de usar las funciones saltarLinea e imprimir y 
+        de incluir la etiqueta <meta> para resolver problemas de acentuación.-->
+
+    <script>
+      function saltarLinea() {
+        document.write("<br><br>");
+      }
+      function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+      }
+      function calcularDiferenciaEdad(edad01, edad02) {
+        imprimir("Existe una diferencia de: " + (edad01 - edad02) + " años");
+      }
+
+      var edad01, edad02;
+      edad01 = 32;
+      edad02 = 27;
+
+      imprimir("Entre " + edad01 + " años y " + edad02 + " años");
+
+      calcularDiferenciaEdad(edad01, edad02);
+    </script>
+  </body>
+</html>

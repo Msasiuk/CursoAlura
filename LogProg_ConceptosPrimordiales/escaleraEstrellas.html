@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Starway to Heaven</h1>
+
+    <script>
+      function saltarLinea() {
+        document.write("<br>");
+      }
+
+      function imprimir(texto) {
+        document.write(texto);
+      }
+
+      for (var x = 0; x < 10; x++) {
+        for (var y = 0; y < 10; y++) {
+          if (y <= x) {
+            imprimir("*");
+          }
+        }
+        saltarLinea();
+      }
+    </script>
+  </body>
+</html>

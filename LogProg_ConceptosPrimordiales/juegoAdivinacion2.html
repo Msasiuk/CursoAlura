@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Bienvenido al juego de adivinación</h1>
+
+    <script>
+      function saltarLinea() {
+        document.write("<br><br>");
+      }
+
+      function imprimir(mensaje) {
+        document.write(mensaje);
+        saltarLinea();
+      }
+
+      function pedirNumero(mensaje) {
+        var numUser = prompt(mensaje + " Ingrese un número entre uno y diez");
+        return numUser;
+      }
+
+      function imprimirFelicitaciones(numRandom) {
+        imprimir("Felicitaciones el número pensado era el " + numRandom);
+      }
+
+      function evaluarNumero(numUser, numRandom) {
+        if (numUser > numRandom) {
+          alert("Ingrese un número mas bajo");
+        } else if (numUser < numRandom) {
+          alert("Ingrese un número mas alto");
+        }
+      }
+
+      var numRandom = Math.round(Math.random() * 10);
+      var numUser = pedirNumero("Hola! ");
+      var contador = 2;
+
+      while (contador <= 3) {
+        if (numUser == numRandom) {
+          imprimirFelicitaciones(numRandom);
+          break;
+        } else {
+          evaluarNumero(numUser, numRandom);
+          var numUser = pedirNumero("Intento nro " + contador);
+        }
+        contador++;
+      }
+
+      if (numUser == numRandom) {
+        imprimirFelicitaciones(numRandom);
+      } else if (numUser != numRandom) {
+        imprimir("Perdio. El número pensado era " + numRandom);
+      }
+    </script>
+  </body>
+</html>

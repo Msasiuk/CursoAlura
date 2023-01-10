@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas width="600" height="600"></canvas>
+
+    <script>
+      var pizarra = document.querySelector("canvas");
+      var pincel = pizarra.getContext("2d");
+
+      function llenarCuadrado(color, x, y) {
+        pincel.fillStyle = color;
+        pincel.fillRect(x, y, 50, 50);
+        pincel.strokeStyle = "black";
+        pincel.strokeRect(x, y, 50, 50);
+      }
+
+      //   var x = 0;
+      //   while (x < 600) {
+      //     llenarCuadrado("green", x, 0);
+      //     llenarCuadrado("yellow", x, 50);
+      //     llenarCuadrado("red", x, 100);
+      //     x += 50;
+      //   }
+
+      for (var y = 0; y < 600; y += 50) {
+        var color;
+        switch (y) {
+          case 0:
+          case 200:
+          case 400:
+            color = "green";
+            break;
+          case 50:
+          case 250:
+          case 450:
+            color = "yellow";
+            break;
+          case 100:
+          case 300:
+          case 500:
+            color = "red";
+            break;
+          default:
+            color = "white";
+            break;
+        }
+        for (var x = 0; x < 600; x += 50) {
+          llenarCuadrado(color, x, y);
+        }
+      }
+    </script>
+  </body>
+</html>

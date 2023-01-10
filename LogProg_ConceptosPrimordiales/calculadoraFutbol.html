@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Bienvenido a la calculadora de puntos de temporada</h1>
+    <script>
+      function saltarLinea() {
+        document.write("<br><br>");
+      }
+
+      function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+      }
+
+      var victorias = parseInt(
+        prompt("Ingrese la cantidad de victorias de su equipo:")
+      );
+      var empate = parseInt(
+        prompt("Ingrese la cantidad de empates de su equipo:")
+      );
+      var puntosAnt = parseInt(
+        prompt(
+          "Ingrese la cantidad de puntos que obtuvo su equipo el año pasado"
+        )
+      );
+      var puntosAct = victorias * 3 + empate;
+
+      if (puntosAct > puntosAnt) {
+        imprimir("Su equipo tuvo mejor desempeño este año");
+      } else if (puntosAct == puntosAnt) {
+        imprimir("Su equipo mantuvo el mismo desempeño del año pasado");
+      } else {
+        imprimir("Su equipo tuvo peor desempeño este año");
+      }
+    </script>
+  </body>
+</html>

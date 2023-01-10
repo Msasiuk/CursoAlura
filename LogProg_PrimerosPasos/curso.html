@@ -1,0 +1,59 @@
+<!-- etiqueta que indica al navegador con que conjuntos de caracteres debe trabajar la página web -->
+<meta charset="utf-8" />
+
+<!-- h1 hasta h6 se usa para títulos y subtítulos -->
+<h1>Mi primer programa en HTML</h1>
+
+<!-- br, etiqueta para saltos de línea -->
+<br />
+
+<!-- p, etiqueta para párrafos y texto en general-->
+<p>Será esto realmente un programa?</p>
+<br />
+
+<!-- a, etiqueta para hipervínculos -->
+<a href="https://www.google.com" target="_blank">Hipervínculo a Google</a>
+<br />
+<br />
+
+<script>
+  alert("Esto es un mensaje generado con JS");
+</script>
+
+<script>
+  // funcion document write permite ingresar texto en JS sin necesidad de funcion alert
+  document.write("número 5 + número 6 = " + (5 + 6) + "<br>");
+  document.write("texto 5 + número 6 = " + "5" + 6 + "<br>");
+  document.write("texto 5 + texto 6 = " + "5" + "6" + "<br>");
+</script>
+
+<script>
+  var nombre1, nombre2, saltoLinea;
+  nombre1 = "Gabriela";
+  nombre2 = "Cecilia";
+  // crear variables con etiquetas html puede ser util para no tener que estar modificando cada lugar donde se colocó esa etiqueta
+  saltoLinea = "<br><br>";
+
+  document.write(
+    "Mi primer nombre es: " +
+      nombre1 +
+      saltoLinea +
+      "Mi segundo nombre es: " +
+      nombre2 +
+      saltoLinea
+  );
+
+  // tambien puedo crear una funcion, por convencion se crean con forma verbal infinitivo ya que generalmente indican una acción
+  function saltarLinea() {
+    document.write("<br><br>");
+  }
+  document.write("Mi primer nombre es: " + nombre1);
+  saltarLinea();
+  document.write("Mi segundo nombre es: " + nombre2);
+</script>
+
+<script>
+  // Funcion promp es similar a alert, aparece como pop up pero permite guardar el valor ingresado por el usuario en una variable.
+  // Pero ojo porque devuelve string
+  var nombre = promp("Ingrese su nombre");
+</script>

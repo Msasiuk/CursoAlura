@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Inicio Sesión</h1>
+
+    <!-- Cambia el código anterior para que el usuario tenga 3 intentos de inicio de sesión. 
+Atención: si lo hace bien en el primer intento, no tiene sentido seguir preguntando por su nombre de usuario y contraseña. -->
+
+    <script>
+      var inicioDeSesionRegistrado = "alura";
+      var contrasenhaRegistrada = "alura321";
+
+      for (var x = 0; x <= 2; x++) {
+        var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+        var contrasenhaIngresada = prompt("Ingrese su contraseña");
+        if (
+          inicioDeSesionRegistrado == inicioDeSesionIngresado &&
+          contrasenhaRegistrada == contrasenhaIngresada
+        ) {
+          alert("Bienvenido al sistema " + inicioDeSesionIngresado);
+          break;
+        } else {
+          alert("inicio de sesión inválido. Favor intente de nuevo");
+        }
+      }
+
+      if (
+        inicioDeSesionRegistrado == inicioDeSesionIngresado &&
+        contrasenhaRegistrada == contrasenhaIngresada
+      ) {
+        document.write("Bienvenido al sistema " + inicioDeSesionIngresado);
+      } else {
+        document.write(
+          "Agotó sus tres oportunidades. Inicio de sesión inválido."
+        );
+      }
+    </script>
+  </body>
+</html>

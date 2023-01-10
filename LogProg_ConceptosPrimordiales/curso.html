@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function imprimir(frase) {
+        document.write(frase + "<br><br>");
+      }
+
+      // prompt devuelve un valor que por defecto será considerado string
+      // pero este valor puede parsearse antes de ser guardado
+      var numero = parseInt(prompt("Ingrese un número"));
+      var nombre = prompt("Ingrese un nombre");
+      var x = 1;
+
+      //     al sumar un número con texto js devuelve texto (10 + "20" = "1020")
+      //     al multiplicar un número con texto, js intentará convertir el texto a número ("10" * 2 = 20)
+
+      if (false) {
+        imprimir("No se imprimira por se la condición falsa");
+      } else if (true) {
+        imprimir("Se imprimira por ser la condición true");
+      } else {
+        imprimir(
+          "Se imprimirá? No, al haber otra condición true antes sale de la ejecución"
+        );
+      }
+
+      while (x <= 10) {
+        x += 2;
+        imprimir("Bienvenid@ " + nombre);
+      }
+    </script>
+  </body>
+</html>

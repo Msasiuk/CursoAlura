@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Creamos un programa para calcular IMC.
+        Profundizamos en el retorno de funciones. -->
+
+    <h1>Bienvenido a la calculadora de IMC</h1>
+
+    <script>
+      function imprimir(frase) {
+        document.write("<p>" + frase + "</p>");
+        document.write("<br><br>");
+      }
+
+      function calcularImc(peso, altura) {
+        var imc = peso / (altura * altura);
+        return imc;
+      }
+
+      alert("Bienvenido a la calculadora de IMC");
+      var nombre = prompt("Ingrese su nombre");
+      var peso = prompt(nombre + ", ingrese su peso");
+      var altura = prompt(
+        nombre + ", ingrese su altura separando metros con punto"
+      );
+      var imc = Math.round(calcularImc(peso, altura));
+
+      imprimir(nombre + " su índice de masa corporal es de: " + imc);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Para facilitar un poco, las dimensiones de nuestros rectángulos (base x altura) en pixeles es el siguiente:
+    Rectángulo 1: 350, 300 (cabeza).
+    Rectángulos 2 y 3: 90, 90 (ojos).
+    Rectángulo 4: 70, 100 (nariz).
+    Rectángulos 5 y 6: 40, 110 (parte de la boca). 
+    Su canvas debe tener el tamaño de 600 x 400 pixeles.-->
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+      var pizarra = document.querySelector("canvas");
+      var pincel = pizarra.getContext("2d");
+
+      pincel.fillStyle = "darkgreen";
+      pincel.fillRect(100, 50, 350, 300);
+
+      pincel.fillStyle = "black";
+      pincel.fillRect(150, 100, 90, 90);
+      pincel.fillRect(310, 100, 90, 90);
+      pincel.fillRect(240, 190, 70, 100);
+      pincel.fillRect(310, 240, 40, 110);
+      pincel.fillRect(200, 240, 40, 110);
+    </script>
+  </body>
+</html>

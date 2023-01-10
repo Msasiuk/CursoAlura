@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ¡Altera la función saltarLinea para que salte cinco líneas! Es decir, hacer cinco <br>.
+
+        Realiza una etiqueta HTML, será bastante útil para separar un resultado de otro:<hr>. 
+        Altera la función saltarLinea() para que esta escriba en el navegador un <hr> después del tercer <br> que ya hicimos.
+        
+        La fuente de nuestro programa puede que aún no sea la adecuada. Hay una etiqueta HTML que se llama <big>.
+        Haz que la función imprimir coloque la frase entre <big> y </big>.
+        
+        ¿Qué pasa si te olvidas la palabra function a la hora de declarar una de las funciones? (da error)
+        ¿Y los paréntesis en la declaración de la función saltarLinea? (no llama a la funcion)-->
+
+    <script>
+      //   function saltarLinea() {
+      //     document.write("<br>");
+      //   }
+
+      //   function saltarLinea() {
+      //     document.write("<br><br><br><br><br>");
+      //   }
+
+      function saltarLinea() {
+        document.write("<br><br><br>");
+        crearLinea();
+        document.write("<br><br>");
+      }
+
+      function crearLinea() {
+        document.write("<hr");
+      }
+
+      //   function imprimir(frase) {
+      //     document.write(frase);
+      //     saltarLinea();
+      //   }
+
+      function imprimir(frase) {
+        document.write("<big>" + frase + "</big>");
+        saltarLinea();
+      }
+
+      var anio = 2022;
+      imprimir("hola amigos");
+      imprimir("Juan tiene: " + (anio - 2000) + " años");
+      imprimir("Pedro tiene: " + (anio - 1995) + " años");
+      imprimir("Carlos tiene: " + (anio - 2005) + " años");
+    </script>
+  </body>
+</html>

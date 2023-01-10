@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+      var pizarra = document.querySelector("canvas");
+      var pincel = pizarra.getContext("2d");
+
+      pincel.fillStyle = "lightgray";
+      pincel.fillRect(0, 0, 600, 400);
+
+      function exibirAlerta(evento) {
+        console.log(evento);
+        alert("Usted hizo click sobre la pizarra");
+      }
+
+      //En este caso se llama a la funcion sin parametros para que no se inicie salvo que ocurra el evento.
+      pizarra.onclick = exibirAlerta;
+    </script>
+  </body>
+</html>

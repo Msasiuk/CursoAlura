@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Calculadora media edad</h1>
+
+    <script>
+      function imprimir(frase) {
+        document.write(frase + "<br><br>");
+      }
+      var miembrosFamilia = parseInt(
+        prompt("Ingrese la cantidad de miembros de su familia")
+      );
+      var contador = 1;
+      var edadPersona, edadMedia;
+      var edadTotal = 0;
+
+      while (contador <= miembrosFamilia) {
+        edadTotal += parseInt(
+          prompt("Ingrese la edad del integrante nro " + contador)
+        );
+        contador++;
+      }
+
+      edadMedia = edadTotal / miembrosFamilia;
+      imprimir("La edad media de la familia es " + edadMedia);
+    </script>
+  </body>
+</html>

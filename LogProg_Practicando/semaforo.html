@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas width="1000" height="1000"></canvas>
+    <script>
+      var pizarra = document.querySelector("canvas");
+      var pincel = pizarra.getContext("2d");
+
+      function dibujarCuadrado(color, x, y) {
+        pincel.fillStyle = color;
+        pincel.fillRect(x, y, 50, 50);
+        pincel.strokeStyle = "black";
+        pincel.strokeRect(x, y, 50, 50);
+      }
+
+      function dibujarRectangulo(color, x, y, altura) {
+        pincel.fillStyle = color;
+        pincel.fillRect(x, y, 50, altura);
+        pincel.strokeStyle = "black";
+        pincel.strokeRect(x, y, 50, altura);
+      }
+
+      dibujarCuadrado("red", 0, 0);
+      dibujarCuadrado("yellow", 0, 50);
+      dibujarCuadrado("green", 0, 100);
+
+      dibujarRectangulo("lightgrey", 100, 100, Math.round(Math.random() * 100));
+    </script>
+  </body>
+</html>
