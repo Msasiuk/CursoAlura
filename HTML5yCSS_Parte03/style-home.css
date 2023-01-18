@@ -1,0 +1,78 @@
+/*Cuidado porque el código que vaya último sobreescribira el que se encontraba antes, seguir orden de html primero body, luego div, luego etiquetas individuales*/
+
+body {
+    background: #e6e6e6;
+}
+
+.titulo-principal {
+    /* Background se usa para colocar color en fondo de etiqueta usando sistema hexadecimal(combinacion de sistema numérico decimal 0,1,2,3,4,5,6,7,8,9 y las primeras 6 letras de nuestro alfabeto A,B,C,D,E,F) permite representar los colores en menos caracteres que por ejemplo el sistema binario. La posición es la siguiente red-red-green-green-blue-blue, siendo 0 la mínima expresión de color y F la máxima.
+    #000000 color negro
+    #FFFFFF color blanco 
+    #FF0000 color rojo*/
+    /* Sistema rgb va a 0 valor mínimo a 255 valor máximo
+    rgb(0,0,0) negro
+    rgb(255,255,255) blanco*/
+    /* Sistema nombre  red,  white,  black,  etc*/
+    text-align: center;
+
+    /*height para altura de etiqueta, no alinea el texto verticalmente*/
+    height: auto;
+
+    border: 10px double #000000;
+    /*paddin es el espacio interno entre texto y borde de etiqueta, margin es el espacio externo entre borde de etiqueta y body o etiqueta padre*/
+    padding: 20px;
+    margin: 40px;
+}
+
+#banner {
+    /*Cuando se trabaja con imagenes usar sólo width o height si se usan los dos puede deformarse la imagen*/
+    width: 100%;
+}
+
+.principal {
+    background: #CCCCCC;
+    padding: 20px;
+}
+
+/*Evitar usar nombre de etiquetas sino usar id y clases, ya que pueden cambiarse luego los nombres de las etiquetas*/
+.titulo-centralizado {
+    text-align: center;
+}
+
+/* Selectores son las formas de llamar a las etiquetas, puede ser usando el nombre de la etiqueta, su #id o su .clase    */
+p {
+    text-align: center;
+
+}
+
+#mision {
+    font-size: 20px;
+}
+
+/*Para aplicar estilos en etiquetas anidadas deben colocarse en orden sin separar por coma*/
+em strong {
+    color: red;
+}
+
+.diferenciales {
+    background: #e6e6e6;
+    padding: 30px;
+}
+
+
+
+.ul-diferenciales {
+    /*inline-block que use sólo el ancho de su contenido, y que siga saltando con cada elemento -il-*/
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    margin-right: 10%;
+}
+
+.items {
+    font-style: italic;
+}
+
+.imagenDiferenciales {
+    width: 50%;
+}

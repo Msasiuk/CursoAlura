@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - Barbería Alura</title>
+    <!--Archivo reset.css elimina estilos por defecto del browser, debe ir antes de nuestra hoja de estilo no generar errores-->
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="caja">
+        <!--El logo dentro del h1 demuestra lo importante que es para mi página, y sirve para resaltarlo-->
+        <!--atributo alt(alternative) en caso de no cargar la imagen muestra el texto ingresado, ayuda a la navegavilidad-->
+        <h1><img src="imagenes/logo.png" alt="Logo Barbería Alura" /></h1>
+
+        <!--tag nav debe usarse para lista de navegación-->
+        <nav>
+          <ul class="navegacion">
+            <!--tag a(anchor) crea un enlace fa traves de atributo href a otras páginas/archivos/ubicaciones dentro de la misma página-->
+            <li><a href="index.html" rel="noopener noreferrer">Home</a></li>
+            <li>
+              <a href="productos.html" rel="noopener noreferrer">Productos</a>
+            </li>
+            <!--atributo href="#" indica que debe mantenerse en la misma página en la que está-->
+            <li>
+              <a href="contacto.html" rel="noopener noreferrer">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!--tag form para formularios, los elementos de formulario tienen por defecto display inline-->
+      <form>
+        <!--tag label(etiqueta) sobre un input (entrada), los relaciono con for/id-->
+        <label for="nombreapellido">Nombre y Apellido</label>
+        <!--Atributo required impide que se envíe el formulario si el campo se encuentra vacío-->
+        <input type="text" id="nombreapellido" class="input-padron" required />
+
+        <label for="correoelectronico">Correo Electrónico</label>
+        <!--Existen distintos tipos type, colocarlos correctamente permite el teclado del celular se modifique mostrando números o arrobas, etc-->
+        <!--atributo placeholder permite mostrar un texto de referencia dentro del input que no será pasado como valor-->
+        <input
+          type="email"
+          id="correoelectronico"
+          class="input-padron"
+          required
+          placeholder="email@dominio.com"
+        />
+
+        <label for="telefono">Telefono</label>
+        <input
+          type="tel"
+          id="telefono"
+          class="input-padron"
+          required
+          placeholder="(XX) XXXX XXXX"
+        />
+
+        <label for="mensaje">Mensaje</label>
+        <!--tag textarea se usa para ingreso de texto libre, el alto y ancho se modifica con cols y rows-->
+        <textarea
+          cols="70"
+          rows="10"
+          id="mensaje"
+          class="input-padron"
+          required
+        ></textarea>
+
+        <!--Se usa fieldset  se utiliza para crear una división en nuestro formulario, con uno o más input, no es recomendable separar con div estos elementos de formulario-->
+        <fieldset>
+          <legend>¿Cómo le gustaría que lo contactemos?</legend>
+
+          <!--atributo value es el valor que se va a pasar cuando se envíe el formulario, siempre que se haya hecho click sobre el radio button-->
+
+          <!--atributo name permite agrupar los radio button y que el usuario solo pueda marcar uno-->
+          <label for="radio-email">
+            <input
+              type="radio"
+              name="contacto"
+              value="email"
+              id="radio-email"
+            />Email</label
+          >
+
+          <label for="radio-telefono">
+            <input
+              type="radio"
+              name="contacto"
+              value="telefono"
+              id="radio-telefono"
+            />Teléfono</label
+          >
+
+          <!--atributo checked permite marcar por defecto una opcion tanto de radio button como en el checkbox-->
+          <label for="radio-whatsapp"
+            ><input
+              type="radio"
+              name="contacto"
+              value="whatsapp"
+              id="radio-whatsapp"
+              checked
+            />WhatsApp</label
+          >
+        </fieldset>
+
+        <fieldset>
+          <!--tag legend se usa para marcar el título de un grupo de campos de un formulario, no es recomendable poner p o h-->
+          <legend>¿En cuál horario prefiere ser atendido?</legend>
+          <!--tag selec(selector) permite crear una lista de elementos atraves del tag option, select debe tener entre 1 a n option-->
+          <select>
+            <option>Mañana</option>
+            <option>Tarde</option>
+            <option>Noche</option>
+          </select>
+        </fieldset>
+
+        <!--Otra forma de relacionar un label(etiqueta) con un input (entrada), es anidando el input dentro del label-->
+        <label class="checkbox"
+          ><input type="checkbox" checked />Le gustaría recibir novedades de la
+          Barbería Alura?</label
+        >
+
+        <!--Evitar input type button, el correcto para enviar formulario es input type submit-->
+        <input type="submit" value="Enviar formulario" class="enviar" />
+      </form>
+
+      <!--tag table para formar tablas, tr(table row) fila, td(table data) celda correspondiente a columna-->
+      <!--tags thead, th(reemplazan las td), tbody, tfoot sirve para indicar las distintas partes de una tabla-->
+      <table>
+        <thead>
+          <tr>
+            <th>Día</th>
+            <th>Horario</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lunes</td>
+            <td>08hs - 20hs</td>
+          </tr>
+          <tr>
+            <td>Miércoles</td>
+            <td>08hs - 20hs</td>
+          </tr>
+          <tr>
+            <td>Viernes</td>
+            <td>08hs - 20hs</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+    <footer>
+      <img src="imagenes/logo-blanco.png" alt="Logo Barbería Alura" />
+      <!--Los caracteres Unicode están disponibles para ser usados como un complemento a nuestro texto-->
+      <p class="copyright">&copy Copyright Barbería Alura - 2020</p>
+    </footer>
+  </body>
+</html>

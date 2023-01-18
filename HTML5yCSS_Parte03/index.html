@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Barbería Alura</title>
+    <!--La tercer forma de incorporar css es crear una hoja aparte y linkearla con direccion relativa al archivo-->
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-home.css" />
+  </head>
+
+  <body>
+    <!--No se admite utilizar etiquetas para dar estilo al contenido, para eso se usa CSS(cascade style sheets)-->
+
+    <!--tag header hace referencia al encabezado principal-->
+    <header>
+      <div class="caja">
+        <!--El logo dentro del h1 demuestra lo importante que es para mi página, y sirve para resaltarlo-->
+        <h1><img src="imagenes/logo.png" alt="Logo Barbería Alura" /></h1>
+
+        <!--tag nav debe usarse para lista de navegación-->
+        <nav>
+          <ul class="navegacion">
+            <!--tag a(anchor) crea un enlace fa traves de atributo href a otras páginas/archivos/ubicaciones dentro de la misma página-->
+            <li><a href="index.html" rel="noopener noreferrer">Home</a></li>
+            <li>
+              <a href="productos.html" rel="noopener noreferrer">Productos</a>
+            </li>
+            <!--atributo href="#" indica que debe mantenerse en la misma página en la que está-->
+            <li>
+              <a href="contacto.html" rel="noopener noreferrer">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!--tag img(image) con atributo src(source) permite incoporar imágenes al archivo html-->
+    <img id="banner" src="imagenes/banner.jpg" alt="Imagen Barbería Alura" />
+
+    <!--tag div para dividir contenido-->
+    <div class="principal">
+      <h2 class="titulo-centralizado">Sobre la Barbería Alura</h2>
+
+      <p>
+        Ubicada en el corazón de la ciudad, la
+        <strong>Barbería Alura</strong> trae para el mercado lo que hay de mejor
+        para su cabello y barba. Fundada en 2020, la Barbería Alura ya es
+        destaque en la ciudad y conquista nuevos clientes diariamente.
+      </p>
+
+      <p id="mision">
+        <em
+          >Nuestra misión es:
+          <strong
+            >"Proporcionar autoestima y calidad de vida a nuestros
+            clientes".</strong
+          ></em
+        >
+      </p>
+      <p>
+        Ofrecemos profesionales experimentados que están constantemente
+        observando los cambios y movimiento en el mundo de la moda, para así
+        ofrecer a nuestros clientes las últimas tendencias. El atendimiento
+        posee un padrón de excelencia y agilidad, garantizando calidad y
+        satisfacción de nuestros clientes.
+      </p>
+    </div>
+
+    <div class="diferenciales">
+      <h3 class="titulo-centralizado">Diferenciales</h3>
+
+      <!--tag ul(unordered list) se usa para listas desordenadas, no importa el orden de sus elementos-->
+      <!--tag ol(ordered list) se usa para listas ordenadas, donde importa el orden de sus elementos-->
+      <ul class="ul-diferenciales">
+        <!--tag li(list item) se usa para identificar los elementos individuales de la lista-->
+        <li class="items">Atención personalizada a los clientes</li>
+        <li class="items">Espacio diferenciado</li>
+        <li class="items">Localización</li>
+        <li class="items">Profesionales calificados</li>
+      </ul>
+
+      <img
+        src="imagenes/diferenciales.jpg"
+        alt="Imagen de cliente recibiendo corte de barba en Barbería Alura"
+        class="imagenDiferenciales"
+      />
+    </div>
+
+    <footer>
+      <img src="imagenes/logo-blanco.png" alt="Logo Barbería Alura" />
+      <!--Los caracteres Unicode están disponibles para ser usados como un complemento a nuestro texto-->
+      <p class="copyright">&copy Copyright Barbería Alura - 2020</p>
+    </footer>
+  </body>
+</html>

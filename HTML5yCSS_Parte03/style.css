@@ -1,0 +1,197 @@
+header {
+    background-color: #BBBBBB;
+    padding: 20px 0;
+}
+
+.caja {
+    width: 80%;
+    /*position relative, ya el absolute que contiene impide modificarlo*/
+    position: relative;
+    /*margen 0 arriba y abajo, auto para izquierda o derecha dependendiendo del tamaño de la pantalla*/
+    margin: 0 auto;
+
+}
+
+nav {
+    /*La posición suele estar en static.
+    Relative tiene en cuenta la posición del elemento anterior y va moviendo en base a ella
+    Absolute tiene en cuenta la posición del body, no contempla otros elementos */
+    position: absolute;
+    top: 110px;
+    right: 0;
+
+}
+
+nav li {
+    /*cada li tiene display block por defecto, con inline-block le digo que ocupe sólo el espacio de sus caracteres*/
+    display: inline-block;
+    /*cuatro valores(arriba, derecha, abajo, izquierda)
+    tres valores(arriba y abajo, derecha, izquierda)
+    dos valores(arriba y abajo, derecha e izquierda)
+    un valor(todas las direcciones)*/
+    margin: 0 0 0 15px;
+}
+
+nav a {
+    /*text-transform para cambiar a mayus, minus, etc*/
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    /*text-decoration para subrayar, tachar, eliminar subrayado, etc*/
+    text-decoration: none;
+}
+
+/*hover captura el moviendo del mouse sobre la etiqueta, clase, id*/
+nav a:hover {
+    color: #c78c19;
+    text-decoration: underline;
+}
+
+.productos {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px;
+
+}
+
+.productos li {
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    /*1.5% x 6 da 9% + 90% width = 99% ventana*/
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    /*box-sizing tamaño de la caja, límite del espacio definido para que no sobrepase el 99% que se establecio antes*/
+    box-sizing: border-box;
+    /* forma larga 
+    border-width: 2px;
+    border-style: solid;
+    border-color: #000000;
+     */
+    border: 3px solid #000000;
+    /*4 valores: arriba, derecho, abajo, izquierdo
+    un valor: todos*/
+    border-radius: 10px;
+}
+
+/*hover captura el movimiento del mouse sobre la etiqueta, clase, id*/
+.productos li:hover {
+    border-color: #c78c19;
+    /* font-size: 33px; */
+}
+
+/*active captura el click del mouse sobre la etiqueta, clase, id*/
+.productos li:active {
+    border-color: #088c19;
+}
+
+.productos h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/*Por motivos de especificidad, al ser mayor la de de productos h2 debo hacer un productos li h2 
+Para que cuando el usuario pase el cursor sobre algún ítem de la lista productos, se modificará el tamaño del texto del h2*/
+.productos li:hover h2 {
+    font-size: 33px;
+}
+
+.producto-descripcion {
+    font-size: 18px;
+}
+
+.producto-precio {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    /*background repite y pega la imagen n veces hasta ocupar el 100% del espacio, pueden ingresarse imagenes agregando url()*/
+    background: url(imagenes/bg.jpg);
+    padding: 40px;
+}
+
+.copyright {
+    color: #FFFFFF;
+    /*El tamaño por defecto de tamaño de etiqueta p es de 16px*/
+    font-size: 13px;
+    margin: 20px;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+form {
+    margin: 40px 0;
+}
+
+/*Existe una jerarquía de marcadores que se llama especificidad, hay que tener cuidado el código lee de arriba a bajo pero respeta la mayor especificidad:
+     1000(html)    --  100(id),10(clase),1(nombre etiqueta)
+Mayor valor que el id tiene el caso del estilo-inline, dentro de la código html*/
+form label,
+form legend {
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+/*Si quiero dar el mismo estilo a más de un elemento lo ingreso separado por coma*/
+.input-padron {
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 50%;
+}
+
+.checkbox {
+    margin: 20px 0;
+}
+
+.enviar {
+    width: 40%;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: orange;
+    border: none;
+    border-radius: 5px;
+    /*propiedad transition permite generar transiciones un determinado tiempo de las propiedades que incluya*/
+    /* transition: 1s background; */
+    transition: 1s all;
+    cursor: pointer;
+
+}
+
+.enviar:hover {
+    background: darkorange;
+    /*propiedad transform permite trasformar el elemento, su escala, su rotacion, etc*/
+    /*1.2 es el 20%, 3 es el 300%*/
+    transform: scale(1.2);
+    /*si se quiere generar más de una transformación debe colocarse en la misma linea
+    transform: scale(1.2) rotate(70deg); */
+
+}
+
+table {
+    margin: 40px 40px;
+}
+
+thead {
+    background: #555555;
+    color: white;
+    font-weight: bold;
+}
+
+td,
+th {
+    border: 1px solid #000000;
+    padding: 8px 15px;
+
+}
