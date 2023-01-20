@@ -1,0 +1,417 @@
+/*Pego en body la fuente linkeada en el html del google-fonts*/
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    background-color: #BBBBBB;
+    padding: 20px 0;
+}
+
+.caja {
+    width: 80%;
+    /*position relative, ya el absolute que contiene impide modificarlo*/
+    position: relative;
+    /*margen 0 arriba y abajo, auto para izquierda o derecha dependendiendo del tamaño de la pantalla*/
+    margin: 0 auto;
+
+}
+
+nav {
+    /*La posición suele estar en static.
+    Relative tiene en cuenta la posición del elemento anterior y va moviendo en base a ella
+    Absolute tiene en cuenta la posición del body, no contempla otros elementos */
+    position: absolute;
+    top: 110px;
+    right: 0;
+
+}
+
+nav li {
+    /*cada li tiene display block por defecto, con inline-block le digo que ocupe sólo el espacio de sus caracteres*/
+    display: inline-block;
+    /*cuatro valores(arriba, derecha, abajo, izquierda)
+    tres valores(arriba y abajo, derecha, izquierda)
+    dos valores(arriba y abajo, derecha e izquierda)
+    un valor(todas las direcciones)*/
+    margin: 0 0 0 15px;
+}
+
+nav a {
+    /*text-transform para cambiar a mayus, minus, etc*/
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    /*text-decoration para subrayar, tachar, eliminar subrayado, etc*/
+    text-decoration: none;
+}
+
+/*hover captura el moviendo del mouse sobre la etiqueta, clase, id*/
+nav a:hover {
+    color: #c78c19;
+    text-decoration: underline;
+}
+
+.productos {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px;
+
+}
+
+.productos li {
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    /*1.5% x 6 da 9% + 90% width = 99% ventana*/
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    /*box-sizing tamaño de la caja, límite del espacio definido para que no sobrepase el 99% que se establecio antes*/
+    box-sizing: border-box;
+    /* forma larga 
+    border-width: 2px;
+    border-style: solid;
+    border-color: #000000;
+     */
+    border: 3px solid #000000;
+    /*4 valores: arriba, derecho, abajo, izquierdo
+    un valor: todos*/
+    border-radius: 10px;
+}
+
+/*hover captura el movimiento del mouse sobre la etiqueta, clase, id*/
+.productos li:hover {
+    border-color: #c78c19;
+    /* font-size: 33px; */
+}
+
+/*active captura el click del mouse sobre la etiqueta, clase, id*/
+.productos li:active {
+    border-color: #088c19;
+}
+
+.productos h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/*Por motivos de especificidad, al ser mayor la de de productos h2 debo hacer un productos li h2 
+Para que cuando el usuario pase el cursor sobre algún ítem de la lista productos, se modificará el tamaño del texto del h2*/
+.productos li:hover h2 {
+    font-size: 33px;
+}
+
+.producto-descripcion {
+    font-size: 18px;
+}
+
+.producto-precio {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    /*background repite y pega la imagen n veces hasta ocupar el 100% del espacio, pueden ingresarse imagenes agregando url()*/
+    background: url(imagenes/bg.jpg);
+    padding: 40px;
+}
+
+.copyright {
+    color: #FFFFFF;
+    /*El tamaño por defecto de tamaño de etiqueta p es de 16px*/
+    font-size: 13px;
+    margin: 20px;
+}
+
+
+form {
+    margin: 40px auto;
+    width: 80%;
+
+}
+
+/*Existe una jerarquía de marcadores que se llama especificidad, hay que tener cuidado el código lee de arriba a bajo pero respeta la mayor especificidad:
+     1000(html)    --  100(id),10(clase),1(nombre etiqueta)
+Mayor valor que el id tiene el caso del estilo-inline, dentro de la código html*/
+form label,
+form legend {
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+/*Si quiero dar el mismo estilo a más de un elemento lo ingreso separado por coma*/
+.input-padron {
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 50%;
+}
+
+.checkbox {
+    margin: 20px 0;
+}
+
+.enviar {
+    width: 40%;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: orange;
+    border: none;
+    border-radius: 5px;
+    /*propiedad transition permite generar transiciones un determinado tiempo de las propiedades que incluya*/
+    /* transition: 1s background; */
+    transition: 1s all;
+    cursor: pointer;
+
+}
+
+.enviar:hover {
+    background: darkorange;
+    /*propiedad transform permite trasformar el elemento, su escala, su rotacion, etc*/
+    /*1.2 es el 20%, 3 es el 300%*/
+    transform: scale(1.2);
+    /*si se quiere generar más de una transformación debe colocarse en la misma linea
+    transform: scale(1.2) rotate(70deg); */
+
+}
+
+table {
+    margin: 40px 40px;
+}
+
+thead {
+    background: #555555;
+    color: white;
+    font-weight: bold;
+}
+
+td,
+th {
+    border: 1px solid #000000;
+    padding: 8px 15px;
+
+}
+
+/* Aquí inicia CSS para home/index */
+
+/* Selectores avanzandos para:
+    seleccionar elemento hijo de un elemento padre
+elemento padre > elemento hijo 
+main > p {}
+
+    seleccionar elemento que sigue a otro
+elemento hermano + elemento hermano
+
+img + p {}
+
+    seleccionar todos los elementos que siguen a otro
+elemento hermano ~ p
+
+img ~ p {}
+
+    seleccionar a todos los elementos menos a
+elemento:not(#id, .class, etiqueta)
+main p:not(#missao) {
+}
+
+Tambien pueden concatenarse los selectores como el siguiente ejemplo
+section > p + h2 {} 
+    Donde seleccionara el h2 hijo de section y hermano de p
+*/
+
+/*Pueden hacerse calculos con CSS por ejemplo, para ello se utiliza la función calc() y dentro de ella el cálculo que deseemos hacer x ej:
+.banner {
+    width:calc(40% - (26px *4));
+}*/
+
+
+.banner {
+    /*Cuando se trabaja con imagenes usar sólo width o height si se usan los dos puede deformarse la imagen*/
+    width: 100%;
+}
+
+.principal {
+    padding: 3em 0;
+    background: #FEFEFE;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.titulo-principal,
+.titulo-diferenciales {
+    text-align: center;
+    /*em es el tamaño por defecto del navegador, en este caso 15px, entonces 2em es 30px*/
+    font-size: 2em;
+    margin: 0 0 1em;
+    /*clear se usa cuando se usa float para que no aplique sobre otras etiquetas, para que la imagen no suba hasta el título*/
+    clear: left;
+}
+
+/*Con los dos puntos se crea un pseudoelemento que permite seleccionar un elemento dentro de otro elemento sin tener que crear otra clase o id*/
+/* p::first-line {
+    font-style: italic;
+} */
+/* .titulo-principal:before {
+    content: "[";
+}
+.titulo-principal:after {
+    content: "]";
+} */
+/* .titulo-principal::first-letter {
+    font-weight: bold;
+} */
+
+.principal p {
+    margin: 0 0 1em;
+}
+
+.principal strong {
+    font-weight: bold;
+}
+
+.principal em {
+    font-style: italic;
+}
+
+.utensillos {
+    width: 120px;
+    /*float coloca el elemento en la lateral(que elijamos) de nuestra página y deja que los otros elementos se posicionen alrededor de él.*/
+    float: left;
+    /*4 valores arriba, derecha, abajo, izquierda*/
+    margin: 0 20px 20px 0;
+}
+
+.mapa {
+    padding: 3em 0;
+    /* usar linear-gradient() permite crear gradientes de color por líneas
+    background: linear-gradient(45deg, orange, blue, red);
+    background: linear-gradient(orange 50%, blue, red); */
+    background: linear-gradient(#FEFEFE, #888888);
+    /* usar radial-gradient() permite crear gradientes de color en circulo
+    background: radial-gradient(orange, blue, red); */
+}
+
+.mapa p {
+    /*3 valores arriba, izquierda y derecha, abajo*/
+    margin: 0 0 2em;
+    text-align: center;
+}
+
+.mapa-contenido {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.diferenciales {
+    padding: 3em 0;
+    background: #888888;
+
+}
+
+.contenido-diferenciales {
+    width: 640px;
+    margin: 0 auto;
+}
+
+.lista-diferenciales {
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.items {
+    /*line height espaciado de linea en 1+50% del tamaño fuente*/
+    line-height: 1.5;
+}
+
+/*con :before creo un pseudo-elemento que precede al elemendo HTML, le digo que cuando encuentre un item inserte una estrella, no importa la cantidad de items*/
+.items:before {
+    content: "★";
+}
+
+/*Pseudoclase, estoy diciendo al primer hijo, al primer elemento de la clase items. Trabajando con pseudoclase se evita tener que incorporar más clases o o ids extras*/
+/*  si fuera al 3 hijo se usa el ntn-child
+.items:nth-child(3) 
+    si fuera a los hijos pares hijo se usa el ntn-child
+.items:nth-child(2n) 
+ */
+.items:first-child {
+    font-weight: bold;
+}
+
+.imagen-diferenciales {
+    width: 60%;
+    float: right;
+    margin: 0 0 15px 0;
+    transition: 400ms;
+    /*box-shadow cuanto tiene 3 valores
+    1ro ubicación de la sombra en eje x
+    2do ubicación de la sombre en eje y
+    3ro color de sombra
+    
+    cuando tiene 4 valores o 5
+    1ro ubicación de la sombra e eje x
+    2do ubicación de la sombre en eje y
+    3ro color de sombra
+    4to difuminación de la sombra
+    5to expansión de la sombra
+    */
+
+    /*Se puede colocar n catidad de sombras, los valores deben separarse por coma*/
+
+    /*Si se agrega la propiedad inset la sombra ingresa a la imagen
+    box-shadow: inset 0 0 30px 15px #000000;*/
+
+    /*text-shadow permite ingresar sombra en texto*/
+    box-shadow: 10px 10px 30px 15px #000000;
+
+}
+
+.imagen-diferenciales:hover {
+    /*Opacity se usa para opacar elementos como imagenes, textos, etc 
+
+    100% == 1, 30% == 0.3
+    
+    Para opacar colores existe rgba(0,0,0,0) donde el último valor es para indicar la opacidad a diferencia del rgb(0,0,0) que sólo indica los colores*/
+    opacity: 30%;
+}
+
+.video {
+    width: 560px;
+    margin: 1em auto;
+
+}
+
+/*Las medias querys se usan para diseño responsivo. 
+
+@media screen dice que si se encuentra una pantalla de hasta 480px que aplique los siguientes cambios*/
+@media screen and (max-width:480px) {
+    h1 {
+        text-align: center;
+    }
+
+    nav {
+        position: static;
+
+    }
+
+    .lista-diferenciales,
+    .imagen-diferenciales {
+        width: 100%;
+    }
+
+    .caja,
+    .principal,
+    .mapa,
+    .contenido-diferenciales,
+    .video {
+        width: auto;
+    }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos - Barbería Alura</title>
+    <!--Archivo reset.css elimina estilos por defecto del browser, debe ir antes de nuestra hoja de estilo no generar errores-->
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="caja">
+        <!--El logo dentro del h1 demuestra lo importante que es para mi página, y sirve para resaltarlo-->
+        <h1><img src="./imagenes/logo.png" alt="Logo Barbería Alura" /></h1>
+
+        <!--tag nav debe usarse para lista de navegación-->
+        <nav>
+          <ul class="navegacion">
+            <!--tag a(anchor) crea un enlace fa traves de atributo href a otras páginas/archivos/ubicaciones dentro de la misma página-->
+            <li><a href="index.html" rel="noopener noreferrer">Home</a></li>
+            <li>
+              <a href="productos.html" rel="noopener noreferrer">Productos</a>
+            </li>
+            <!--atributo href="#" indica que debe mantenerse en la misma página en la que está-->
+            <li>
+              <a href="contacto.html" rel="noopener noreferrer">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!--tag main sirve para delimitar el contenido ppal, el cuerpo de nuestra página-->
+    <main>
+      <ul class="productos">
+        <li>
+          <h2>Cabello</h2>
+          <img src="./imagenes/cabello.jpg" alt="Imagen de cabello de varón" />
+          <p class="producto-descripcion">
+            Con tijera o máquina, a gusto del cliente
+          </p>
+          <p class="producto-precio">$ 1.000,00</p>
+        </li>
+        <li>
+          <h2>Barba</h2>
+          <img src="./imagenes/barba.jpg" alt="Imagen de barba de varón" />
+          <p class="producto-descripcion">
+            Corte y diseño profesional de barba
+          </p>
+          <p class="producto-precio">$ 800,00</p>
+        </li>
+        <li>
+          <h2>Cabello + Barba</h2>
+          <img
+            src="./imagenes/cabello+barba.jpg"
+            alt="Imagen de cabello y barba de varón"
+          />
+          <p class="producto-descripcion">
+            Paquete completo de cabello y barba
+          </p>
+          <p class="producto-precio">$ 1.500,00</p>
+        </li>
+      </ul>
+    </main>
+
+    <footer>
+      <img src="./imagenes/logo-blanco.png" alt="Logo Barbería Alura" />
+      <!--Los caracteres Unicode están disponibles para ser usados como un complemento a nuestro texto-->
+      <p class="copyright">&copy Copyright Barbería Alura - 2020</p>
+    </footer>
+  </body>
+</html>
